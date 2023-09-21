@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
+{ 
+
     [SerializeField] private float touchSpeed = 1;
     
     private Vector2 pastPoisiton;

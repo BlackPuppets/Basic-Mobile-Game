@@ -9,10 +9,5 @@ public class SuperCoinCollectable : GenericCollectable
         base.OnCollect();
         ItemManager.instance.AddSuperCoins();
     }
-
-    protected override void PlayEffect()
-    {
-        base.PlayEffect();
-        //Instantiate(particleEffect, transform.position, Quaternion.identity);
-    }
+    
 }

@@ -8,6 +8,7 @@ public class GenericCollectable : MonoBehaviour
 
     //[Header("Sounds")]
     //[SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected float deactivatedTime;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -20,12 +21,14 @@ public class GenericCollectable : MonoBehaviour
     protected virtual void Collect()
     {
         OnCollect();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Destroy(gameObject, deactivatedTime);
     }
 
+
     protected virtual void OnCollect() {
-        PlayEffect();
+        //PlayEffect();
     }
     
-    protected virtual void PlayEffect() { }
+    //protected virtual void PlayEffect() { }
 }
