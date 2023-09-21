@@ -11,12 +11,10 @@ public class PowerUpSpeed : GenericPowerUp
     {
         PlayerMovement.instance.PowerUpSpeed(fasterSpeed);
         base.StartPowerUp();
-        Debug.Log("a");
     }
 
     protected override void EndPowerUp()
     {
         PlayerMovement.instance.EndPowerUpSpeed();
-        Debug.Log("b");
     }
 }
