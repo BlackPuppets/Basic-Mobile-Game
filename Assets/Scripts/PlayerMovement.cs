@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [SerializeField] private Transform targetLerp;
     [SerializeField] private float lerpSpeed = 1;
     [SerializeField] private float originalSpeed = 1;
@@ -17,19 +18,29 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private GameObject invencibleText;
     public bool invencible;
+    public bool dead = false;
 
     [SerializeField]private float originalHeight = 0;
 
     public static PlayerMovement instance;
+    private AnimationManager animationManager;
 
     private Vector3 tempPoisiton;
 
-    private void Awake()
+    private const string IDLE = "a_Idle";
+    private const string RUNNING = "a_Running";
+    private const string DEAD = "a_Dead";
+    private const string FLYING = "a_Flying";
+
+    private void Start()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
+
+        animationManager = GetComponent<AnimationManager>();
+        animationManager.Play(RUNNING);
     }
 
     private void Update()
@@ -49,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
     public void EndGame()
     {
         canMove = false;
+        if(dead)
+            animationManager.Play(DEAD);
+        else
+            animationManager.Play(IDLE);
         restartScreen.SetActive(true);
     }
 
@@ -58,11 +73,13 @@ public class PlayerMovement : MonoBehaviour
     {
         currentSpeed = fasterSpeed;
         Invoke(nameof(EndPowerUpSpeed), 2);
+        animationManager.Play(RUNNING, 2);
     }
 
     public void EndPowerUpSpeed()
     {
         currentSpeed = originalSpeed;
+        animationManager.Play(RUNNING, 1);
     }
 
     public void PowerUpInvencible()
@@ -80,11 +97,13 @@ public class PlayerMovement : MonoBehaviour
     public void PowerUpFly(float heightAmount)
     {
         ChangeHeight(heightAmount);
+        animationManager.Play(FLYING);
     }
 
     public void EndPowerUpFly()
     {
         ChangeHeight(originalHeight);
+        animationManager.Play(RUNNING);
     }
 
     #endregion

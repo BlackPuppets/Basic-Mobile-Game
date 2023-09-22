@@ -9,7 +9,10 @@ public class GenericObstacle : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (!collision.GetComponent<PlayerMovement>().invencible)
+            {
+                collision.GetComponent<PlayerMovement>().dead = true;
                 collision.GetComponent<PlayerMovement>().EndGame();
+            }
         }
     }
 }
