@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool invencible;
     public bool dead = false;
 
-    [SerializeField]private float originalHeight = 0;
+    [SerializeField]private float originalHeight;
 
     public static PlayerMovement instance;
     private AnimationManager animationManager;
@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        originalHeight = transform.localPosition.y;
+
         if (instance == null)
             instance = this;
         else
