@@ -104,12 +104,4 @@ public class LevelManager : MonoBehaviour
             levelMaterial.SetColor("_BaseColor", new Color(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f)));
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SpawnLevel();
-        }
-    }
 }
