@@ -20,6 +20,7 @@ public class GenericPowerUp : GenericCollectable
     protected virtual void StartPowerUp()
     {
         Invoke(nameof(EndPowerUp), duration);
+        PlayerMovement.instance.CollectedPowerUp();
     }
 
     protected virtual void EndPowerUp()

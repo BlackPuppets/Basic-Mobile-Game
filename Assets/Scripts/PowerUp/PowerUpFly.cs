@@ -9,6 +9,7 @@ public class PowerUpFly : GenericPowerUp
     {
         Invoke(nameof(EndPowerUp), duration);
         PlayerMovement.instance.PowerUpFly(heightChangeAmount);
+        base.StartPowerUp();
     }
 
     protected override void EndPowerUp()

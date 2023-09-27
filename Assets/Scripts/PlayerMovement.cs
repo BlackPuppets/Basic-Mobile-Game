@@ -13,14 +13,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed = 1;
 
 
-    [SerializeField] private bool canMove= true;
+    [SerializeField] private bool canMove= false;
     [SerializeField] private GameObject restartScreen;
 
     [SerializeField] private GameObject invencibleText;
     public bool invencible;
     public bool dead = false;
 
-    [SerializeField]private float originalHeight;
+    [SerializeField] private float originalHeight;
+
+    [Header("Coroutine Variables")]
+    [SerializeField] private Transform scaler;
+    [SerializeField] private Vector3 initialScale;
+    [SerializeField] private Vector3 collectScale;
+    private float elapsedTime = 0;
 
     public static PlayerMovement instance;
     private AnimationManager animationManager;
@@ -31,10 +37,12 @@ public class PlayerMovement : MonoBehaviour
     private const string RUNNING = "a_Running";
     private const string DEAD = "a_Dead";
     private const string FLYING = "a_Flying";
+    private const string FINISHED = "a_Finished";
+    private const string START = "a_Start";
 
-    private void Start()
+    public void StartGame()
     {
-        originalHeight = transform.localPosition.y;
+        originalHeight = scaler.transform.localPosition.y;
 
         if (instance == null)
             instance = this;
@@ -43,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         animationManager = GetComponent<AnimationManager>();
         animationManager.Play(RUNNING);
+        canMove = true;
     }
 
     private void Update()
@@ -50,11 +59,11 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             tempPoisiton = targetLerp.position;
-            tempPoisiton.y = transform.position.y;
-            tempPoisiton.z = transform.position.z;
+            tempPoisiton.y = scaler.transform.position.y;
+            tempPoisiton.z = scaler.transform.position.z;
 
-            transform.position = Vector3.Lerp(transform.position, tempPoisiton, lerpSpeed * Time.deltaTime);
-            transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
+            scaler.transform.position = Vector3.Lerp(scaler.transform.position, tempPoisiton, lerpSpeed * Time.deltaTime);
+            scaler.transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
         }
 
     }
@@ -65,11 +74,16 @@ public class PlayerMovement : MonoBehaviour
         if(dead)
             animationManager.Play(DEAD);
         else
-            animationManager.Play(IDLE);
+            animationManager.Play(FINISHED);
         restartScreen.SetActive(true);
     }
 
     #region PowerUps
+
+    public void CollectedPowerUp()
+    {
+        StartCoroutine(CollectStart());
+    }
 
     public void PowerUpSpeed(float fasterSpeed)
     {
@@ -112,10 +126,36 @@ public class PlayerMovement : MonoBehaviour
 
     void ChangeHeight(float heightAmount)    
     {
-        var p = transform.position;
+        var p = scaler.transform.position;
         p.y = heightAmount;
-        transform.position = p;
+        scaler.transform.position = p;
         //transform.position += new Vector3(transform.position.x, heightAmount, transform.position.z);
+    }
+
+    IEnumerator CollectStart()
+    {
+        elapsedTime = 0;
+        while (elapsedTime <= 1)
+        {
+            scaler.transform.localScale = Vector3.Lerp(initialScale, collectScale, elapsedTime);
+            elapsedTime += Time.deltaTime*4;
+            yield return new WaitForSeconds(0);
+        }
+        StartCoroutine(CollectEnd());
+        yield return null;
+    }
+
+    IEnumerator CollectEnd()
+    {
+        elapsedTime = 1;
+        while (elapsedTime >= 0)
+        {
+            scaler.transform.localScale = Vector3.Lerp(initialScale, collectScale, elapsedTime);
+            elapsedTime -= Time.deltaTime*4;
+            yield return new WaitForSeconds(0);
+        }
+
+        yield return null;
     }
 
 }

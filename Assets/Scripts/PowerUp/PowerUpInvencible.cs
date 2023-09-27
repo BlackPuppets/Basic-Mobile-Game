@@ -9,6 +9,7 @@ public class PowerUpInvencible : GenericPowerUp
     {
         Invoke(nameof(EndPowerUp), duration);
         PlayerMovement.instance.PowerUpInvencible();
+        base.StartPowerUp();
     }
 
     protected override void EndPowerUp()
