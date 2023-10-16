@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &941937254279925664
 GameObject:
@@ -283,6 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &1637112116919134469
 GameObject:
@@ -402,6 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &1785326185463638358
 GameObject:
@@ -470,6 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0764eac445c424d946ceae6bd4fc25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: -9070688762145132948, guid: 72ad08b0b8e2bdb419c428b72525e04d,
+    type: 3}
+  particlePlaneCollision: {fileID: 0}
   deactivatedTime: 3
   duration: 2
   fasterSpeed: 12
@@ -591,6 +603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &5272757031597151403
 GameObject:
@@ -710,6 +725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &5355611710907006767
 GameObject:
@@ -829,6 +847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &5532849272821080539
 GameObject:
@@ -1133,6 +1154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &6314919288071468103
 GameObject:
@@ -1252,6 +1276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &6405655656161601243
 GameObject:
@@ -1371,6 +1398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &7260815179816070292
 GameObject:
@@ -1490,6 +1520,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &7686136034477718656
 GameObject:
@@ -1609,6 +1642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &7692188476271705928
 GameObject:
@@ -1833,6 +1869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &8153940963845760184
 GameObject:
@@ -1952,6 +1991,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &8864865156704816656
 GameObject:
@@ -2071,6 +2113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2
 --- !u!1 &9176059555819043801
 GameObject:
@@ -2190,4 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
+  particlePlaneCollision: {fileID: 8970393494296624465}
   deactivatedTime: 2

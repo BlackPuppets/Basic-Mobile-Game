@@ -118,4 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ee5a0a46e4941b1b81c93aa65fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1557532650049023930, guid: 45869123081ed0a47b04069ff08557dd,
+    type: 3}
   deactivatedTime: 2

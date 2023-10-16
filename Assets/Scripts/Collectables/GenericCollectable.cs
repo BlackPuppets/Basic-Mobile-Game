@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GenericCollectable : MonoBehaviour
 {
-    //[SerializeField] protected Transform particleEffect;
+    [SerializeField] protected ParticleSystem particleEffect;
+    [SerializeField] protected Transform particlePlaneCollision;
 
     //[Header("Sounds")]
     //[SerializeField] protected AudioSource audioSource;
@@ -27,8 +28,14 @@ public class GenericCollectable : MonoBehaviour
 
 
     protected virtual void OnCollect() {
-        //PlayEffect();
+        PlayEffect();
     }
     
-    //protected virtual void PlayEffect() { }
+    protected virtual void PlayEffect() {
+        if(particleEffect != null)
+        {
+            var instantiatedParticle = Instantiate(particleEffect, transform.position, Quaternion.identity);
+            instantiatedParticle.collision.AddPlane(particlePlaneCollision);
+        }
+    }
 }
